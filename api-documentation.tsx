@@ -56,36 +56,50 @@ export default function ApiDocumentation() {
     ],
     "/api/v1/ai/akenox/lu-sunda": [
       { name: "query", type: "string", required: true, description: "Query ask for AI" },
+      { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
     ],
     "/api/v1/ai/google-gemini": [
       { name: "query", type: "string", required: true, description: "Query ask for Google AI" },
+      { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
     ],
     "/api/v1/ai/alibaba/qwen-turbo-latest": [
       { name: "query", type: "string", required: true, description: "Query ask for Qwen Turbo AI" },
+      { name: "system_prompt", type: "string", required: false, description: "System Prompt Custom" },
+      { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
     ],
     "/api/v1/ai/qwen/qwen1.5-1.8b-chat": [
       { name: "query", type: "string", required: true, description: "Query ask for Qwen 8B Chat AI" },
+      { name: "system_prompt", type: "string", required: false, description: "System Prompt Custom" },
+      { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
     ],
     "/api/v1/ai/deepseek/deepseek-r1-distill-qwen-32b": [
       { name: "query", type: "string", required: true, description: "Query ask for Deepseek Qwen AI" },
+      { name: "system_prompt", type: "string", required: false, description: "System Prompt Custom" },
+      { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
     ],
     "/api/v1/dl/fb": [
       { name: "url", type: "string", required: true, description: "Link facebook" },
+      { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
     ],
     "/api/v1/dl/instagram-v4": [
       { name: "url", type: "string", required: true, description: "Link instgram and version v4" },
+      { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
     ],
     "/api/v1/dl/twitter-v3": [
       { name: "url", type: "string", required: true, description: "Link Twitter and version v3" },
+      { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
     ],
     "/api/v1/dl/tiktok-v2": [
       { name: "url", type: "string", required: true, description: "Link Tiktok and version v2" },
+      { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
     ],
     "/api/v1/dl/snapsave": [
       { name: "url", type: "string", required: true, description: "Link Here" },
+      { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
     ],
     "/api/v1/dl/xnxx": [
       { name: "url", type: "string", required: true, description: "Link Here" },
+      { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
     ],
   }
 
@@ -301,7 +315,7 @@ export default function ApiDocumentation() {
               </div>
             </div>
 
-            <p className="text-gray-400 mb-8">Example JSON Dev</p>
+            <p className="text-gray-400 mb-8">Get API key from @aknuserbot</p>
 
             <h2 className="text-[#38bdf8] text-lg mb-4">Parameters</h2>
             <div className="bg-[#1a2234] border border-[#334155] rounded-md mb-8 p-4">
