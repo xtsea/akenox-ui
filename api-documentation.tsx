@@ -43,9 +43,11 @@ export default function ApiDocumentation() {
     { method: "GET", name: "Tiktok", path: "/api/v1/dl/tiktok-v2", category: "Downloader" },
     { method: "GET", name: "Snapsave", path: "/api/v1/dl/snapsave", category: "Downloader" },
     { method: "GET", name: "Xnxx", path: "/api/v1/dl/xnxx", category: "Downloader" },
-    { method: "GET", name: "AI Lu Jawa", path: "/api/v1/ai/akenox/lu-sunda", category: "AI" },
+    { method: "GET", name: "Lu Jawa", path: "/api/v1/ai/akenox/lu-sunda", category: "AI" },
     { method: "GET", name: "Google Gemini", path: "/api/v1/ai/google-gemini", category: "AI" },
-    { method: "GET", name: "Qwen Turbo", path: "/api/v1/ai/qwen-turbo-latest", category: "AI" },
+    { method: "GET", name: "Qwen Turbo", path: "/api/v1/ai/alibaba/qwen-turbo-latest", category: "AI" },
+    { method: "GET", name: "Qwen 8B Chat", path: "/api/v1/ai/qwen/qwen1.5-1.8b-chat", category: "AI" },
+    { method: "GET", name: "Deepseek Qwen", path: "/api/v1/ai/deepseek/deepseek-r1-distill-qwen-32b", category: "AI" },
   ]
 
   const parametersMapping: { [key: string]: { name: string; type: string; required: boolean; description: string; }[] } = {
@@ -58,8 +60,14 @@ export default function ApiDocumentation() {
     "/api/v1/ai/google-gemini": [
       { name: "query", type: "string", required: true, description: "Query ask for Google AI" },
     ],
-    "/api/v1/ai/qwen-turbo-latest": [
+    "/api/v1/ai/alibaba/qwen-turbo-latest": [
       { name: "query", type: "string", required: true, description: "Query ask for Qwen Turbo AI" },
+    ],
+    "/api/v1/ai/qwen/qwen1.5-1.8b-chat": [
+      { name: "query", type: "string", required: true, description: "Query ask for Qwen 8B Chat AI" },
+    ],
+    "/api/v1/ai/deepseek/deepseek-r1-distill-qwen-32b": [
+      { name: "query", type: "string", required: true, description: "Query ask for Deepseek Qwen AI" },
     ],
     "/api/v1/dl/fb": [
       { name: "url", type: "string", required: true, description: "Link facebook" },
