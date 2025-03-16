@@ -36,6 +36,7 @@ export default function ApiDocumentation() {
   }
 
   const endpoints = [
+    // Downloader
     { method: "GET", name: "Example JSON", path: "/api/v1/json/all", category: "Custom" },
     { method: "GET", name: "Facebook", path: "/api/v1/dl/fb", category: "Downloader" },
     { method: "GET", name: "Instagram", path: "/api/v1/dl/instagram-v4", category: "Downloader" },
@@ -43,17 +44,24 @@ export default function ApiDocumentation() {
     { method: "GET", name: "Tiktok", path: "/api/v1/dl/tiktok-v2", category: "Downloader" },
     { method: "GET", name: "Snapsave", path: "/api/v1/dl/snapsave", category: "Downloader" },
     { method: "GET", name: "Xnxx", path: "/api/v1/dl/xnxx", category: "Downloader" },
+    // AI
     { method: "GET", name: "Lu Jawa", path: "/api/v1/ai/akenox/lu-sunda", category: "AI" },
     { method: "GET", name: "Google Gemini", path: "/api/v1/ai/google-gemini", category: "AI" },
     { method: "GET", name: "Qwen Turbo", path: "/api/v1/ai/alibaba/qwen-turbo-latest", category: "AI" },
     { method: "GET", name: "Qwen 8B Chat", path: "/api/v1/ai/qwen/qwen1.5-1.8b-chat", category: "AI" },
     { method: "GET", name: "Deepseek Qwen", path: "/api/v1/ai/deepseek/deepseek-r1-distill-qwen-32b", category: "AI" },
+    // Federation
+    { method: "POST", name: "Federation NewFed", path: "/api/v2/federation/newfed", category: "Federation" },
+    { method: "POST", name: "Federation SubFed", path: "/api/v2/federation/subfed", category: "Federation" },
+    { method: "GET", name: "Federation GetFed UIID", path: "/api/v2/federation/getfed/{uuid}", category: "Federation" },
+    { method: "GET", name: "Federation Bans", path: "/api/v2/federation/ban", category: "Federation" },
   ]
 
   const parametersMapping: { [key: string]: { name: string; type: string; required: boolean; description: string; }[] } = {
     "/api/v1/json/all": [
       { name: "null", type: "string", required: false, description: "null" },
     ],
+    // AI
     "/api/v1/ai/akenox/lu-sunda": [
       { name: "query", type: "string", required: true, description: "Query ask for AI" },
       { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
@@ -77,6 +85,7 @@ export default function ApiDocumentation() {
       { name: "system_prompt", type: "string", required: false, description: "System Prompt Custom" },
       { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
     ],
+    // Downloader
     "/api/v1/dl/fb": [
       { name: "url", type: "string", required: true, description: "Link facebook" },
       { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
@@ -99,6 +108,26 @@ export default function ApiDocumentation() {
     ],
     "/api/v1/dl/xnxx": [
       { name: "url", type: "string", required: true, description: "Link Here" },
+      { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
+    ],
+    // Federation
+    "/api/v2/federation/newfed": [
+      { name: "name", type: "string", required: true, description: "Federation Name" },
+      { name: "owner", type: "string", required: true, description: "Federation Owner: user id" },
+      { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
+    ],
+    "/api/v2/federation/subfed": [
+      { name: "parent_uuid", type: "string", required: true, description: "Federation UUID (required json)" },
+      { name: "child_uuid", type: "string", required: true, description: "Federation Child UUID (required json)" },
+      { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
+    ],
+    "/api/v2/federation/getfed/{uuid}": [
+      { name: "uuid", type: "string", required: true, description: "Federation UUID path" },
+      { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
+    ],
+    "/api/v2/federation/ban": [
+      { name: "federation_uuid", type: "string", required: true, description: "Federation UUID" },
+      { name: "user_id", type: "number", required: true, description: "Federation user_id" },
       { name: "x-api-key", type: "string", required: true, description: "Headers API key from: @aknuserbot" },
     ],
   }
