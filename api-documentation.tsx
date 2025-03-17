@@ -296,7 +296,7 @@ export default function ApiDocumentation() {
                     </span>
                   </div>
                 ))}
-  
+
                 <h3 className="text-sm font-semibold mb-2 text-gray-400">Federation</h3>
                 {filteredEndpoints.filter(endpoint => endpoint.category === "Federation").map((endpoint, index) => (
                   <div
