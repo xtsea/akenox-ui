@@ -296,6 +296,29 @@ export default function ApiDocumentation() {
                     </span>
                   </div>
                 ))}
+  
+                <h3 className="text-sm font-semibold mb-2 text-gray-400">Federation</h3>
+                {filteredEndpoints.filter(endpoint => endpoint.category === "Federation").map((endpoint, index) => (
+                  <div
+                    key={index}
+                    className={`flex items-center gap-2 p-2 rounded-md cursor-pointer group ${selectedEndpoint === endpoint.path ? "bg-[#1a2234]" : "hover:bg-[#1a2234]/50"
+                      }`}
+                    onClick={() => handleEndpointSelect(endpoint.path)}
+                  >
+                    <button
+                      className={`text-xs px-2 py-0.5 rounded ${endpoint.method === "GET" ? "bg-emerald-500/20 text-emerald-500" : "bg-blue-500/20 text-blue-500"
+                        }`}
+                    >
+                      {endpoint.method}
+                    </button>
+                    <span
+                      className={`text-sm ${selectedEndpoint === endpoint.path ? "text-white" : "text-gray-300 group-hover:text-white"}`}
+                    >
+                      {endpoint.name}
+                    </span>
+                  </div>
+                ))}
+
               </div>
             </div>
           </div>
