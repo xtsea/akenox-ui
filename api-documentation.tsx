@@ -270,7 +270,7 @@ function EndpointItem({ endpoint, selectedEndpoint, onSelect }) {
                       onSelect={handleEndpointSelect}
                       />
                   ))}
-  
+
                 <h3 className="text-sm font-semibold mb-2 text-gray-400">AI</h3>
                 {filteredEndpoints
                   .filter(endpoint => endpoint.category === "AI")
@@ -282,7 +282,7 @@ function EndpointItem({ endpoint, selectedEndpoint, onSelect }) {
                       onSelect={handleEndpointSelect}
                       />
                   ))}
-  
+
                 <h3 className="text-sm font-semibold mb-2 text-gray-400">Downloader</h3>
                 {filteredEndpoints
                   .filter(endpoint => endpoint.category === "Downloader")
@@ -294,7 +294,7 @@ function EndpointItem({ endpoint, selectedEndpoint, onSelect }) {
                       onSelect={handleEndpointSelect}
                       />
                   ))}
-  
+
                 <h3 className="text-sm font-semibold mb-2 text-gray-400">Federation</h3>
                 {filteredEndpoints
                   .filter(endpoint => endpoint.category === "Federation")
